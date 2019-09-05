@@ -5,9 +5,11 @@
   <meta charset="utf-8">
   <title>BMO Arcade</title>
   <link rel="stylesheet" href="css/juego.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+
   <div class="col-40" id="juego1">
 
     <div id="titulo">
@@ -15,19 +17,19 @@
 
     </div>
     <div id="instrucciones">
-      <p>instrucciones</p>
+      <p><strong>Instrucciones</strong></p>
       <ul id="lista-instrucciones">
       </ul>
     </div>
     <div id="objetivo">
-      <p>objetivo</p>
-      <img src="images/final.png" width="50" height="50" alt="dd">
+      <p><strong>Objetivo</strong></p>
+      <img class="objetivo-img" src="images/final.png" alt="dd">
       <div class="texto-centrado">
 
       </div>
     </div>
     <div id="ultimo-mov">
-      <p>ultimo movimiento</p>
+      <p><strong>Último movimiento</strong></p>
       <div id="flecha" class="texto-centrado">
 
       </div>
@@ -64,14 +66,16 @@
       </div>
     </div>
   </div>
-  <div id="cartelGanador" style="display: none">
-    <h1>Has ganado</h1>
+
+  <div id="cartelGanador">
+    <div>
+      <button class="btn" onclick="volverAJugar()">Volver A Jugar</button>
+    </div>
     <img src="images/cartel-ganador.gif" alt="cartel-ganador">
   </div>
 
   <div id="footer">
-    <p>footer</p>
-
+    <p><strong>Realizado con &#128147 por Katerine Acosta </strong></p>
   </div>
   <script src="js/juego.js"></script>
 </body>

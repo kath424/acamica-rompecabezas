@@ -1,6 +1,6 @@
 // Arreglo que contiene las intrucciones del juego 
 var instrucciones = ["Utilizar las flechas para mover las piezas",
-  "ordenar las piezas hasta alcanzar las iamgen objetivo"];
+  "Ordenar las piezas hasta alcanzar las iamgen objetivo"];
 // Arreglo para ir guardando los movimientos que se vayan realizando
 var movimientos = [];
 
@@ -61,10 +61,28 @@ function chequearSiGano() {
 // Implementar alguna forma de mostrar un cartel que avise que ganaste el juego
 function mostrarCartelGanador() {
   if (chequearSiGano()) {
-    alert("ganaste khe emozion");
+    mostratCartel();
   }
   //COMPLETAR
 }
+
+function mostrarCartel() {
+  document.getElementById("juego1").style.display = "none";
+  document.getElementById("juego2").style.display = "none";
+  document.getElementById("cartelGanador").style.display = "block";
+}
+
+function ocultarCartel() {
+  document.getElementById("juego1").style.display = "table-cell";
+  document.getElementById("juego2").style.display = "table-cell";
+  document.getElementById("cartelGanador").style.display = "none";
+}
+
+function volverAJugar() {
+  ocultarCartel();
+  mezclarPiezas(30);
+}
+
 
 /* Función que intercambia dos posiciones en la grilla.
 Pensar como intercambiar dos posiciones en un arreglo de arreglos. 
@@ -207,7 +225,6 @@ function intercambiarPosicionesDOM(idPieza1, idPieza2) {
 /* Actualiza la representación visual del último movimiento 
 en la pantalla, representado con una flecha. */
 function actualizarUltimoMovimiento(direccion) {
-  debugger
   ultimoMov = document.getElementById('flecha');
   switch (direccion) {
     case codigosDireccion.ARRIBA:

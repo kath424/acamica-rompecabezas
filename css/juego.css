@@ -21,7 +21,9 @@ li::before {
 
 .col-40 h1 {
   font-size: 20px;
-  color: #E84A5F;
+  color: #fff;
+  background: #e84a5f;
+  letter-spacing: 10px;
 }
 
 .col-40, .col-60 {
@@ -52,21 +54,6 @@ li::before {
 #juego {
   height: 600px;
   width: 600px;
-}
-
-#juego div {
-  text-align: center;
-  animation: fadein 2s;
-}
-.pieza{
-  width: 33%;
-  height: 33%;
-  float: left;
-}
-.pieza > img{
-  width: 100%;
-  height: 100%;
-  border: solid 1px black;
 }
 
 @keyframes fadein {
