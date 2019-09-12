@@ -32,12 +32,7 @@ function mostrarInstrucciones(instrucciones) {
     mostrarInstruccionEnLista(instrucciones[i], 'lista-instrucciones');
 
   }
-
-  //COMPLETAR
 }
-
-/* COMPLETAR: Crear función que agregue la última dirección al arreglo de movimientos
-y utilice actualizarUltimoMovimiento para mostrarlo en pantalla */
 
 function ultimaDireccion(direccion) {
   movimientos.push(direccion);
@@ -55,15 +50,11 @@ function chequearSiGano() {
     }
   }
   return true;
-  //COMPLETAR
 }
 
 // Implementar alguna forma de mostrar un cartel que avise que ganaste el juego
 function mostrarCartelGanador() {
-  if (chequearSiGano()) {
-    mostratCartel();
-  }
-  //COMPLETAR
+  mostrarCartel();
 }
 
 function mostrarCartel() {
@@ -98,16 +89,12 @@ function intercambiarPosicionesGrilla(filaPos1, columnaPos1, filaPos2, columnaPo
   var temp = grilla[filaPos1][columnaPos1];
   grilla[filaPos1][columnaPos1] = grilla[filaPos2][columnaPos2];
   grilla[filaPos2][columnaPos2] = temp;
-
-  //COMPLETAR
 }
 
 // Actualiza la posición de la pieza vacía
 function actualizarPosicionVacia(nuevaFila, nuevaColumna) {
   filaVacia = nuevaFila;
   columnaVacia = nuevaColumna;
-
-  //COMPLETAR
 }
 
 
@@ -118,8 +105,6 @@ function posicionValida(fila, columna) {
   } else {
     return false;
   }
-
-  //COMPLETAR
 }
 
 /* Movimiento de fichas, en este caso la que se mueve es la blanca intercambiando su posición con otro elemento.
@@ -144,15 +129,12 @@ function moverEnDireccion(direccion) {
   else if (direccion === codigosDireccion.DERECHA) {
     nuevaColumnaPiezaVacia = columnaVacia - 1;
     nuevaFilaPiezaVacia = filaVacia;
-
-    //COMPLETAR
   }
 
   // Mueve pieza hacia la izquierda, reemplazandola con la blanca
   else if (direccion === codigosDireccion.IZQUIERDA) {
     nuevaColumnaPiezaVacia = columnaVacia + 1;
     nuevaFilaPiezaVacia = filaVacia;
-    // COMPLETAR
   }
 
   /* A continuación se chequea si la nueva posición es válida, si lo es, se intercambia. 
@@ -163,9 +145,6 @@ function moverEnDireccion(direccion) {
     intercambiarPosiciones(filaVacia, columnaVacia, nuevaFilaPiezaVacia, nuevaColumnaPiezaVacia);
     actualizarPosicionVacia(nuevaFilaPiezaVacia, nuevaColumnaPiezaVacia);
     actualizarUltimoMovimiento(direccion);
-
-    //COMPLETAR: Agregar la dirección del movimiento al arreglo de movimientos
-
   }
 }
 
@@ -290,9 +269,7 @@ function capturarTeclas() {
 
       var gano = chequearSiGano();
       if (gano) {
-        setTimeout(function () {
-          mostrarCartelGanador();
-        }, 500);
+        mostrarCartelGanador();
       }
       evento.preventDefault();
     }
